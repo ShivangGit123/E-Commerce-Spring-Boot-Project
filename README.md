@@ -1,189 +1,241 @@
-# Project Roadmap
+<div align="center">
 
-This file tracks the direction and planned improvements for this project.
+<!-- Animated Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=🛒%20ShopForge&fontSize=60&fontColor=fff&animation=twinkling&fontAlignY=35&desc=A%20Production-Grade%20Java%20E-Commerce%20Backend&descAlignY=58&descSize=18" width="100%"/>
 
-**Why this exists:**
-- To keep the codebase moving toward something production-ready and well-structured.
-- To serve as a hands-on learning reference for real-world Java backend development.
+<!-- Live Badges Row -->
+<p>
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+</p>
 
-**How to pick up work:**
-- `[good first issue]` — new here? start here.
-- `[help wanted]` — mid-level tasks, some context needed.
-- `[advanced]` — architecture or migration heavy.
-- `[discussion]` — open for proposal before any code is written.
+<p>
+  <img src="https://img.shields.io/badge/Phase-1%20%E2%80%94%20Foundation-FF6B6B?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Coverage-JaCoCo-45CC11?style=flat-square"/>
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square"/>
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Contributions-Open-orange?style=flat-square"/>
+</p>
 
-**Status labels:**
-- `Planned` — approved, not started yet.
-- `In Progress` — being worked on.
-- `Completed` — merged and documented.
+<br/>
 
----
+> **A hands-on, real-world Java backend built to learn, contribute to, and eventually run in production.**  
+> From DAO to microservices — one phase at a time.
 
-## End Goal
+<br/>
 
-When this roadmap is done, the project should be:
-- Runnable locally in under 5 minutes.
-- Safe to contribute to — no guessing, no broken main branch.
-- Structured the way a professional Java backend project actually looks.
-- Complete enough to demonstrate the full e-commerce lifecycle end to end.
-- Useful as a study resource for system design and scalability concepts.
-
----
-
-## What This Project Won't Do
-
-- Migrate to a different backend framework (Quarkus, Micronaut, etc.).
-- Replace JSP views with a React/Vue frontend as part of this roadmap.
-
-The goal is to evolve and improve what's here — not rewrite from scratch.
+</div>
 
 ---
 
-## Phase 1 — Foundation First
+## 🚀 What is this?
 
-**Timeline:** Current focus (weeks 0–8)
-**Goal:** Make this reliable to run, easy to contribute to, and stable enough to build on.
+A full-stack **Java + Spring Boot** e-commerce backend, structured like a professional project — not a tutorial throwaway. The goal is to evolve this into something:
 
-### Bugs & Stability
-- Resolve high-impact open bugs from existing issues. `[help wanted]`
-- Standardize error handling across controllers and services. `[help wanted]`
-- Clean up dead code and inconsistent naming. `[help wanted]`
-
-### Developer Setup
-- Docker Compose config for one-command local startup (app + MySQL). `[help wanted]`
-- GitHub Actions CI — run `mvn clean verify` on every PR. `[help wanted]`
-- Issue and PR templates under `.github/`. `[good first issue]`
-- `CONTRIBUTING.md` covering branch naming, commits, and local setup. `[good first issue]`
-- Checkstyle integration in build and CI. `[help wanted]`
-- Separate config profiles for dev, test, and prod. `[help wanted]`
-
-### Platform Upgrade
-- Upgrade to Java 17 + Spring Boot 3.x. `[advanced]`
-- Migrate `javax.*` to `jakarta.*`. `[help wanted]`
-- Verify Hibernate, security, and plugin compatibility after migration. `[advanced]`
-
-### Testing
-- Unit tests for all service classes with JUnit 5 + Mockito. `[good first issue]`
-- Controller tests using `@WebMvcTest`. `[help wanted]`
-- JaCoCo coverage report + README badge. `[good first issue]`
-- DAO-level tests using Testcontainers MySQL. `[advanced]`
-
-### Phase 1 Done When:
-- A new contributor can clone and run the app by following the README alone.
-- Every PR triggers automated build and test checks.
-- Core modules have baseline test coverage.
-- Main branch stays green for 30 days straight.
+- ⚡ **Runnable locally in under 5 minutes**
+- 🧪 **Safe to contribute to** — CI enforced, no broken main
+- 🏗️ **Structured like real production Java backends**
+- 🛍️ **Complete** — covering the full e-commerce lifecycle end to end
+- 📚 **Useful as a study resource** for system design and scalability
 
 ---
 
-## Phase 2 — Complete the E-Commerce Flow
+## ⚡ Quick Start
 
-**Timeline:** After Phase 1 stabilizes (weeks 8–16)
-**Goal:** Build a real, end-to-end shopping experience — not just a skeleton.
+```bash
+# 1. Clone the repo
+git clone https://github.com/your-org/shopforge.git
+cd shopforge
 
-### Cart & Checkout
-- Full cart lifecycle: add, update, remove, clear. `[help wanted]`
-- Checkout flow with order placement and confirmation page. `[advanced]`
-- Order status transitions: created → paid → shipped → delivered / canceled. `[help wanted]`
+# 2. Start everything with Docker Compose
+docker compose up --build
 
-### Architecture
-- Global exception handler for controllers and services. `[help wanted]`
-- Pagination + sorting for product and customer listings. `[good first issue]`
-- Database migrations with Flyway. `[help wanted]`
-- Structured logging with SLF4J and consistent log levels. `[help wanted]`
+# 3. Open the app
+open http://localhost:8080
+```
 
-### Product Features
-- Image upload (multipart) with local storage + cloud-ready abstraction. `[advanced]`
-- Product search by name and category. `[good first issue]`
-- Out-of-stock handling — disable add-to-cart when quantity is 0. `[good first issue]`
-
-### Auth & User Enhancements
-- Password reset via time-limited token. `[advanced]`
-- Email verification on registration. `[advanced]`
-- Remember-me login. `[help wanted]`
-- Multiple shipping addresses per user. `[help wanted]`
-
-### API Docs
-- Swagger UI / OpenAPI 3 integration. `[good first issue]`
-
-### Phase 2 Done When:
-- Full purchase flow works from browsing to order creation.
-- Errors and pagination are handled across major flows.
-- DB migrations are version-controlled and repeatable.
+> 💡 Requires Docker Desktop. No local Java or MySQL install needed.
 
 ---
 
-## Phase 3 — Production Patterns
+## 🗺️ Roadmap at a Glance
 
-**Timeline:** After Phase 2 is feature-complete (weeks 16–28)
-**Goal:** Introduce the patterns that separate hobby projects from production systems.
+<div align="center">
 
-### Performance & Caching
-- Add DB indexes and document query plans for hot paths. `[help wanted]`
-- Redis caching for read-heavy endpoints. `[advanced]`
-- Connection pool tuning + endpoint benchmarking. `[help wanted]`
+```
+Phase 1 ──────────── Phase 2 ──────────── Phase 3 ──────────── Phase 4
+Foundation           E-Commerce           Production            Microservices
+   ✅                   🔄                   📋                    🔭
+   
+Stable · Tested      Full Cart Flow       Redis · Search        Kafka · Events
+CI · Docker          Auth · Orders        Observability         Service Boundaries
+Java 17 Upgrade      Swagger Docs         Caching & Locks       Decomp Guide
+```
 
-### Concurrency Control
-- Optimistic locking for inventory update conflicts. `[advanced]`
-- Pessimistic locking demo with documented tradeoffs. `[advanced]`
-
-### Search
-- Elasticsearch for full-text product search. `[advanced]`
-- SQL search fallback for local environments. `[help wanted]`
-
-### Design Patterns
-- Strategy pattern for payment options (COD, mock card, mock UPI). `[advanced]`
-- Factory pattern for discounts and coupon logic. `[advanced]`
-
-### Observability
-- Spring Boot Actuator endpoints (health, metrics, info). `[good first issue]`
-- Prometheus + Grafana via Docker Compose profile. `[advanced]`
-- Logback JSON structured logging. `[help wanted]`
-
-### Phase 3 Done When:
-- At least one concurrency strategy is live in the inventory path.
-- Search works in both DB-fallback and Elasticsearch modes.
-- Metrics are visible and graphable.
+</div>
 
 ---
 
-## Phase 4 — Microservices & System Design
+## 📦 Phase 1 — Foundation *(Active)*
 
-**Timeline:** Long-term (28+ weeks)
-**Goal:** Show how to decompose this monolith — without breaking the monolith as a learning resource.
+> **Goal:** Make this reliable to run, easy to contribute to, stable enough to build on.
 
-### Decomposition Guide
-- Write a service boundary plan: user, product, order, notification. `[discussion]`
-- Document monolith vs microservices tradeoffs with real examples. `[discussion]`
+| Area | Task | Difficulty | Status |
+|------|------|------------|--------|
+| 🐛 **Stability** | Resolve high-impact open bugs | `help wanted` | Planned |
+| 🐛 **Stability** | Standardize error handling across controllers | `help wanted` | Planned |
+| 🐛 **Stability** | Clean up dead code and inconsistent naming | `help wanted` | Planned |
+| 🐳 **Dev Setup** | Docker Compose — one-command local startup | `help wanted` | **In Progress** |
+| ⚙️ **Dev Setup** | GitHub Actions CI on every PR | `help wanted` | **In Progress** |
+| 📝 **Dev Setup** | Issue & PR templates under `.github/` | `good first issue` | Planned |
+| 📝 **Dev Setup** | `CONTRIBUTING.md` — branches, commits, setup | `good first issue` | Planned |
+| 🔍 **Dev Setup** | Checkstyle integration in build + CI | `help wanted` | Planned |
+| 🔍 **Dev Setup** | Separate config profiles: dev / test / prod | `help wanted` | Planned |
+| ☕ **Platform** | Upgrade to Java 17 + Spring Boot 3.x | `advanced` | Planned |
+| ☕ **Platform** | Migrate `javax.*` → `jakarta.*` | `help wanted` | Planned |
+| ☕ **Platform** | Verify Hibernate, security, plugin compatibility | `advanced` | Planned |
+| 🧪 **Testing** | Unit tests — all service classes (JUnit 5 + Mockito) | `good first issue` | Planned |
+| 🧪 **Testing** | Controller tests using `@WebMvcTest` | `help wanted` | Planned |
+| 🧪 **Testing** | JaCoCo coverage report + README badge | `good first issue` | Planned |
+| 🧪 **Testing** | DAO-level tests with Testcontainers MySQL | `advanced` | Planned |
 
-### Event-Driven Architecture
-- Kafka-based order events with subscribers. `[advanced]`
-- Demonstrate eventual consistency and retry patterns. `[advanced]`
-
-### Phase 4 Done When:
-- Architecture docs clearly show boundaries and communication patterns.
-- At least one event-driven workflow is implemented and tested end to end.
-
----
-
-## Ongoing Maintenance (All Phases)
-
-This runs in parallel — doesn't wait for feature work.
-
-### Automation
-- Dependabot for `pom.xml` dependency updates. `[good first issue]`
-- Stale bot for inactive issues/PRs. `[good first issue]`
-- PR size labeler (S/M/L). `[good first issue]`
-
-### Documentation
-- `docs/adr/` for architecture decisions. `[good first issue]`
-- `docs/architecture.md` with Mermaid component diagram. `[good first issue]`
-- `SECURITY.md` with responsible disclosure info. `[good first issue]`
-- Learning path guide: DAO → Service → Controller → View. `[good first issue]`
+**✅ Phase 1 is done when:**
+- A new contributor can clone → run by following the README alone
+- Every PR triggers automated build + test checks
+- Core modules have baseline test coverage
+- `main` stays green for 30 straight days
 
 ---
 
-## Labels to Use
+## 🛍️ Phase 2 — E-Commerce Flow
+
+> **Goal:** A real, end-to-end shopping experience — not just a skeleton.
+
+<details>
+<summary><b>Click to expand Phase 2 tasks</b></summary>
+
+| Area | Task | Difficulty |
+|------|------|------------|
+| 🛒 **Cart** | Full lifecycle: add, update, remove, clear | `help wanted` |
+| 🛒 **Cart** | Checkout flow with order placement + confirmation | `advanced` |
+| 🛒 **Cart** | Order status: created → paid → shipped → delivered | `help wanted` |
+| 🏗️ **Arch** | Global exception handler | `help wanted` |
+| 🏗️ **Arch** | Pagination + sorting for products & customers | `good first issue` |
+| 🏗️ **Arch** | Database migrations with Flyway | `help wanted` |
+| 🏗️ **Arch** | Structured logging with SLF4J | `help wanted` |
+| 📦 **Products** | Image upload (multipart) + cloud-ready abstraction | `advanced` |
+| 📦 **Products** | Product search by name and category | `good first issue` |
+| 📦 **Products** | Out-of-stock handling — disable add-to-cart at 0 qty | `good first issue` |
+| 🔐 **Auth** | Password reset via time-limited token | `advanced` |
+| 🔐 **Auth** | Email verification on registration | `advanced` |
+| 🔐 **Auth** | Remember-me login | `help wanted` |
+| 🔐 **Auth** | Multiple shipping addresses per user | `help wanted` |
+| 📄 **Docs** | Swagger UI / OpenAPI 3 integration | `good first issue` |
+
+</details>
+
+---
+
+## ⚙️ Phase 3 — Production Patterns
+
+> **Goal:** Patterns that separate hobby projects from production systems.
+
+<details>
+<summary><b>Click to expand Phase 3 tasks</b></summary>
+
+| Area | Task | Difficulty |
+|------|------|------------|
+| 🚀 **Performance** | DB indexes + query plan documentation | `help wanted` |
+| 🚀 **Performance** | Redis caching for read-heavy endpoints | `advanced` |
+| 🚀 **Performance** | Connection pool tuning + benchmarking | `help wanted` |
+| 🔒 **Concurrency** | Optimistic locking for inventory conflicts | `advanced` |
+| 🔒 **Concurrency** | Pessimistic locking demo with tradeoff docs | `advanced` |
+| 🔎 **Search** | Elasticsearch for full-text product search | `advanced` |
+| 🔎 **Search** | SQL search fallback for local environments | `help wanted` |
+| 🎨 **Patterns** | Strategy pattern — payment options (COD, card, UPI) | `advanced` |
+| 🎨 **Patterns** | Factory pattern — discounts and coupon logic | `advanced` |
+| 📊 **Observability** | Spring Boot Actuator: health, metrics, info | `good first issue` |
+| 📊 **Observability** | Prometheus + Grafana via Docker Compose | `advanced` |
+| 📊 **Observability** | Logback JSON structured logging | `help wanted` |
+
+</details>
+
+---
+
+## 🌐 Phase 4 — Microservices & System Design
+
+> **Goal:** Show how to decompose this monolith — without breaking it as a learning resource.
+
+<details>
+<summary><b>Click to expand Phase 4 tasks</b></summary>
+
+| Area | Task | Difficulty |
+|------|------|------------|
+| 📐 **Design** | Service boundary plan: user / product / order / notification | `discussion` |
+| 📐 **Design** | Monolith vs microservices tradeoffs with real examples | `discussion` |
+| 📨 **Events** | Kafka-based order events with subscribers | `advanced` |
+| 📨 **Events** | Eventual consistency + retry patterns demo | `advanced` |
+
+</details>
+
+---
+
+## 🔁 Ongoing Maintenance
+
+> Runs in parallel across all phases.
+
+| Area | Task | Difficulty |
+|------|------|------------|
+| 🤖 **Automation** | Dependabot for `pom.xml` updates | `good first issue` |
+| 🤖 **Automation** | Stale bot for inactive issues/PRs | `good first issue` |
+| 🤖 **Automation** | PR size labeler (S / M / L) | `good first issue` |
+| 📚 **Docs** | `docs/adr/` architecture decision records | `good first issue` |
+| 📚 **Docs** | `docs/architecture.md` with Mermaid component diagram | `good first issue` |
+| 📚 **Docs** | `SECURITY.md` with responsible disclosure info | `good first issue` |
+| 📚 **Docs** | Learning path: DAO → Service → Controller → View | `good first issue` |
+
+---
+
+## 🏁 Top 5 Priorities Right Now
+
+```
+┌────┬──────────────────────────────────────────┐
+│ #1 │ 🐳  Docker Compose local setup            │
+│ #2 │ ⚙️  GitHub Actions CI on pull requests    │
+│ #3 │ 📝  CONTRIBUTING.md + issue/PR templates  │
+│ #4 │ 🧪  Baseline service and controller tests │
+│ #5 │ ☕  Java 17 + Spring Boot 3 migration     │
+└────┴──────────────────────────────────────────┘
+```
+
+---
+
+## 🤝 How to Contribute
+
+**New here?**
+→ Pick a `good first issue` from Phase 1. Open a draft PR early — questions welcome.
+
+**Regular contributor?**
+→ Take on `help wanted` items from the active phase. Tests, docs, and migration notes belong in the same PR.
+
+**Maintainer?**
+→ Keep labels and the phase board up to date. Reject feature PRs that skip tests or documentation.
+
+### PR Checklist
+
+Before marking a PR ready to merge:
+
+- [ ] CI passes — build + tests green
+- [ ] Tests cover the changed behavior
+- [ ] Scope is focused — no mega PRs
+- [ ] Docs updated if behavior or setup changed
+- [ ] Rollback notes included for any risky changes
+
+---
+
+## 🏷️ Labels
 
 ```
 roadmap/phase-1     roadmap/phase-2     roadmap/phase-3     roadmap/phase-4
@@ -193,36 +245,61 @@ blocked             priority/high       priority/medium     priority/low
 
 ---
 
-## Contribution Guide by Level
+## 📂 Project Structure
 
-**New contributor**
-→ Pick a `good first issue` from Phase 1. Open a draft PR early and ask questions.
-
-**Regular contributor**
-→ Take on `help wanted` items from the active phase. Tests, docs, and migration notes should be in the same PR.
-
-**Maintainer**
-→ Keep labels and phase board up to date. Reject feature PRs that skip tests or documentation.
+```
+shopforge/
+├── src/
+│   ├── main/
+│   │   ├── java/com/shopforge/
+│   │   │   ├── controller/       # Spring MVC controllers
+│   │   │   ├── service/          # Business logic
+│   │   │   ├── dao/              # Data access layer
+│   │   │   ├── model/            # JPA entities
+│   │   │   └── config/           # App configuration
+│   │   └── resources/
+│   │       ├── application.yml
+│   │       └── templates/        # JSP views
+│   └── test/                     # JUnit 5 tests
+├── docs/
+│   ├── adr/                      # Architecture decisions
+│   └── architecture.md
+├── .github/
+│   ├── workflows/                # CI pipelines
+│   └── ISSUE_TEMPLATE/
+├── docker-compose.yml
+├── CONTRIBUTING.md
+└── pom.xml
+```
 
 ---
 
-## PR Checklist
+## 🎯 End Goal
 
-Before a PR is ready to merge:
-- [ ] CI passes (build + tests green)
-- [ ] Tests cover the changed behavior
-- [ ] Scope is focused — no mega PRs
-- [ ] Docs updated if behavior or setup changed
-- [ ] Rollback notes included for risky changes
+When this roadmap is complete, the project will be:
+
+| ✅ | What |
+|----|------|
+| ⚡ | Runnable locally in under 5 minutes |
+| 🔒 | Safe to contribute to — no guessing, no broken main |
+| 🏗️ | Structured like a real professional Java backend |
+| 🛍️ | Complete — covering the full e-commerce lifecycle |
+| 📚 | Useful as a study resource for system design and scalability |
+
+> **What this project won't do:**
+> - Migrate to a different backend framework (Quarkus, Micronaut, etc.)
+> - Replace JSP views with a React/Vue frontend
+>
+> The goal is to evolve and improve what's here — not rewrite from scratch.
 
 ---
 
-## What to Work on Right Now
+<div align="center">
 
-If you want to contribute today, these are the top 5 priorities:
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
 
-1. Docker Compose local setup
-2. GitHub Actions CI on pull requests
-3. `CONTRIBUTING.md` + issue/PR templates
-4. Baseline service and controller tests
-5. Java 17 + Spring Boot 3 migration spike
+**Built with ☕ Java · 🌱 Spring Boot · ❤️ Open Source**
+
+*Star ⭐ the repo if this helped you learn something.*
+
+</div>
